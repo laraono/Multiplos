@@ -2,8 +2,8 @@ Program MULTIPLOS;
     VAR P1, P2, N, R, X, NUM:INTEGER;
 
   	FUNCTION INTEIRO(NN:REAL):INTEGER; // VERIFICA VALOR INTEIRO
-    	VAR MULT, IITT:INTEGER;
-    			DIV1,II:REAL;
+    	VAR MULT, CONTI:INTEGER;
+    			DIV1,CONTR:REAL;
     		BEGIN
 					DIV1 := NN; // VALORES NEGATIVOS VIRAM POSITIVOS
           MULT := 1 ; 
@@ -11,28 +11,28 @@ Program MULTIPLOS;
                MULT :=  -1; 
           DIV1 := DIV1 * MULT; 
           
-          // CONTADOR INTEIRO(IITT) E REAL (II)
-					IITT := 0; 
-          II := 0; 
+          // CONTADOR INTEIRO(CONTI) E REAL (CONTR)
+	  CONTI := 0; 
+          CONTR := 0; 
           REPEAT 
-              II := II + 1 ; 
-              IITT := IITT+1; 
-          UNTIL (II  > DIV1); 
+              CONTR := CONTR + 1 ; 
+              CONTI := CONTI+1; 
+          UNTIL (CONTR  > DIV1); 
           
-          INTEIRO:=(IITT-1)*MULT;  // INTEIRO COM SINAL  
+          INTEIRO:=(CONTI-1)*MULT;  // INTEIRO COM SINAL  
         END;
         
 		FUNCTION RESTO(A,B:INTEGER):INTEGER; // ENCONTRA O RESTO
-			VAR IITT:INTEGER;
+			VAR CONTI:INTEGER;
 				BEGIN      
-					IITT := INTEIRO(A/B);
-          RESTO:= A-B*IITT; // RESTO DA DIVIS√O 
+	  CONTI := INTEIRO(A/B);
+          RESTO:= A-B*CONTI; // RESTO DA DIVIS√ÉO 
 				END;
 		
 		PROCEDURE SAI;
 			BEGIN
 			  WRITELN ('MULTIPLOS DE ', N:5, ' = ',  P1:5); 
-   			WRITELN ('N√O MULTIPLOS DE ' , N:5,  ' = ',  P2:5); 
+   			WRITELN ('N√ÉO MULTIPLOS DE ' , N:5,  ' = ',  P2:5); 
 			END;
 		
 		PROCEDURE TESTA(RES:INTEGER; VAR MU,NMU:INTEGER);
