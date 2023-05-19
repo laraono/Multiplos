@@ -1,16 +1,17 @@
 Program MULTIPLOS;     				 
     VAR P1, P2, N, R, X, NUM:INTEGER;
 
-  	FUNCTION INTEIRO(NN:REAL):INTEGER;
+  	FUNCTION INTEIRO(NN:REAL):INTEGER; // VERIFICA VALOR INTEIRO
     	VAR MULT, IITT:INTEGER;
     			DIV1,II:REAL;
     		BEGIN
-					DIV1 := NN;
+					DIV1 := NN; // VALORES NEGATIVOS VIRAM POSITIVOS
           MULT := 1 ; 
           IF(DIV1 < 0) THEN 
                MULT :=  -1; 
           DIV1 := DIV1 * MULT; 
           
+          // CONTADOR INTEIRO(IITT) E REAL (II)
 					IITT := 0; 
           II := 0; 
           REPEAT 
@@ -18,14 +19,14 @@ Program MULTIPLOS;
               IITT := IITT+1; 
           UNTIL (II  > DIV1); 
           
-          INTEIRO:=(IITT-1)*MULT;    
+          INTEIRO:=(IITT-1)*MULT;  // INTEIRO COM SINAL  
         END;
         
-		FUNCTION RESTO(A,B:INTEGER):INTEGER;
+		FUNCTION RESTO(A,B:INTEGER):INTEGER; // ENCONTRA O RESTO
 			VAR IITT:INTEGER;
 				BEGIN      
 					IITT := INTEIRO(A/B);
-          RESTO:= A-B*IITT; 
+          RESTO:= A-B*IITT; // RESTO DA DIVISÃO 
 				END;
 		
 		PROCEDURE SAI;
@@ -43,6 +44,7 @@ Program MULTIPLOS;
 				END;
 
     BEGIN {1}
+	 // MULTIPLOS DE 2
 	  P1 := 0;
 	  P2 := 0;
 	  N := 2;
@@ -60,6 +62,7 @@ Program MULTIPLOS;
 	  P2 := 0;
 	  N := 3;
 	 
+	 // MULTIPLOS DE 3
 	 FOR X := 1 TO 10 DO
 	  	BEGIN
 	  		WRITE('DIGITE O',X:3,'. =>' ); 
